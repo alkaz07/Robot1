@@ -5,10 +5,34 @@ public class Main {
         //String prg = inputProg();
         //String prg = "LSSSRSRSSSSLSLLLL";
 
-        runProg3("LSSSS");
-        runProg3("SSLSLSLSSRSRS");
+       // runProg3("LSSSS");
+       // runProg3("SSLSLSLSSRSRS");
         //runProg3("LSSSSSSSSSSSSSSSSSSSSS");
-        runProg3("LSSSRSSSSRSSSSLSLLLL");
+       // runProg3("LSSSRSSSSRSSSSLSLLLL");
+
+        if(runProg4("LSSSS") == -1)
+            System.out.println("test 1 passed");
+        else
+            System.out.println("test 1 failed");
+
+        if(runProg4("SSLSLSLSSRSRS") == 5)
+            System.out.println("test 2 passed");
+        else
+            System.out.println("test 2 failed");
+
+        if(runProg4("LSSSRSSSSRSSSSLSLLLL") == -1)
+            System.out.println("test 4 passed");
+        else
+            System.out.println("test 4 failed");
+    }
+
+
+    public static int runProg4(String prog) {
+        int maxCountS = 10;
+        int[][] matrix = new int[2*maxCountS+1][2*maxCountS+1];
+        Robot k79 = new Robot(maxCountS, maxCountS, 0, matrix);
+        int res = k79.runProgramUntilCross(prog);
+        return res;
     }
 
     public static void runProg3(String prog) {
@@ -181,7 +205,7 @@ class Robot{
         //directionGrad -=90;
         //if(directionGrad == -90)
         //    directionGrad= 270;
-        directionGrad = (directionGrad-90 + 360) % 360;
+        directionGrad = (directionGrad-90 +360) % 360;
     }
 
     public void stepForward(){
