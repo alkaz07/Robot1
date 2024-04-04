@@ -209,18 +209,10 @@ class Robot{
     }
 
     public void stepForward(){
-        if(directionGrad==0){
-            x++;
-        }
-        if(directionGrad==90){
-            y++;
-        }
-        if(directionGrad==180){
-            x--;
-        }
-        if(directionGrad==270){
-            y--;
-        }
+        if(directionGrad ==   0) x++;
+        if(directionGrad ==  90) y++;
+        if(directionGrad == 180) x--;
+        if(directionGrad == 270) y--;
         countS++;
         matrix[x][y] ++;
     }
